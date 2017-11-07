@@ -47,7 +47,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
- 		<!--start added dependancy for Hibernate and JPA  -->
+ 		<!--start added dependancy for Hibernate and JPA  used Employees mysql sample data to form rest service -->
  		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-data-jpa</artifactId>

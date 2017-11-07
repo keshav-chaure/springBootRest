@@ -43,11 +43,22 @@ public class EmployeeController {
     {
 				return employeeService.get(Integer.parseInt(id));
     }
-	 
+	 /*
+	 {
+	//"id": "3",
+	"firstName": "rawan",
+	"lastName": "lankesh",
+	"gender": "M",
+	"dob": "2011-01-01",
+	"doj": "2017-01-12"
+	}
+	use post method with application/json as header Accept
+	  	  */
 
-	 @RequestMapping(value = "/employee", method = RequestMethod.POST, headers = "Accept=application/json")
-	 public boolean addCountry(@RequestBody Employee employee) {
-	  return employeesList.add(employee);
+	 @RequestMapping(value = "/employee/add", method = RequestMethod.POST, headers = "Accept=application/json", produces = MediaType.APPLICATION_JSON_VALUE)
+	 public int addEmployee(@RequestBody Employee employee) {
+		 System.out.println("$$$$:"+employee.getId());
+		 return employeeService.addEmployee(employee);
 	 }
 
 

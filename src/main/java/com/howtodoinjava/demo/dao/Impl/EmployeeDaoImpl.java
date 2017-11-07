@@ -46,4 +46,19 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		return e;
 	}
 
+	@Override
+	public int addEmployee(Employee e) {
+		int result=1;
+		try {
+			Session session = this.sessionFactory.getCurrentSession();
+			session.save(e);
+			System.out.println("persist in db"+e);
+		} catch(Exception ex){
+			 result=0;
+		} 
+		
+		 return result;
+	}
+	
+
 }

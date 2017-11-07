@@ -29,4 +29,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeDao.get(id);
 	}
 
+	@Override
+	public int addEmployee(Employee e) {
+		return employeeDao.addEmployee(e);
+		 
+	}
+
 }

@@ -59,6 +59,18 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		
 		 return result;
 	}
+
+	@Override
+	public Employee updateEmployee(Employee e) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteEmployee(int id) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }

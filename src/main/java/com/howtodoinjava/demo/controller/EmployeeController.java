@@ -5,7 +5,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -60,6 +62,17 @@ public class EmployeeController {
 		 System.out.println("$$$$:"+employee.getId());
 		 return employeeService.addEmployee(employee);
 	 }
+	 
+	 @RequestMapping(value = "/employee/update", method = RequestMethod.PUT, headers = "Accept=application/json", produces = MediaType.APPLICATION_JSON_VALUE)
+		public ResponseEntity<Employee> updateArticle(@RequestBody Employee employee) {
+			employeeService.updateEmployee(employee);
+			return new ResponseEntity<Employee>(employee, HttpStatus.OK);
+		}
+	 @RequestMapping(value = "employee/delete/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+		public ResponseEntity<Void> deleteArticle(@PathVariable("id") Integer id) {
+			employeeService.deleteEmployee(id);
+			return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+		}
 
 
 }

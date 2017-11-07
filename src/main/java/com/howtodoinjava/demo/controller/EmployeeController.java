@@ -16,6 +16,9 @@ import com.howtodoinjava.demo.model.Employee;
 @RestController
 public class EmployeeController {
 	List<Employee> employeesList = new ArrayList<Employee>();
+	
+	//@RequestMapping(value="employee/getAll",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
+	
 	@RequestMapping(value = "employee/getAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Employee> getEmployees() 
     {
